@@ -12,6 +12,72 @@
  *
  *= require_tree .
  *= require_self
+ *= require custom.css
+ *
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "compass/css3";
+
+
+ ///////////////////  Bootstrap overriding    //////////////////////////////////
+ 
+ .navbar-inverse {
+   background-color: #ffffff;
+   border-color: #090909;
+   font-family: monospace;
+   font-size: 17px;
+ }
+
+ .navbar-inverse .navbar-nav > li > a {
+   color: #191717;
+ }
+ .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+   color: #5CB4FE;
+   background-color: transparent;
+ }
+ .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+   color: #fff;
+   background-color: #090909;
+ }
+ .navbar-inverse .navbar-nav > .disabled > a, .navbar-inverse .navbar-nav > .disabled > a:hover, .navbar-inverse .navbar-nav > .disabled > a:focus {
+   color: #444;
+   background-color: transparent;
+ }
+
+
+
+///////////////////  FLEX CONTAINER   //////////////////////////////////////////
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-shrink: 0;
+
+   align-items: stretch;
+   justify-content: space-around;
+  -webkit-box-align: stretch;
+  -webkit-flex-flow: row wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+}
+
+///////////////////  FLEX ITEM   ///////////////////////////////////////////////
+
+
+.flex-item {
+    padding: 8px;
+    width: 300px;
+    // height: 300px;
+    margin-top: 10px;
+    text-align: center;
+    -webkit-flex-shrink: 0;
+    -webkit-box-align: stretch;
+}

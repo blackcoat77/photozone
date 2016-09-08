@@ -1,12 +1,23 @@
 <h2>Add new post</h2>
 
-<%= form_for @post, html: { multipart: true } do |f| %>
+<%= form_for @post, html: { multipart: true, class: "form-horizontal" } do |f| %>
+    <div class="form-group">
+        <%= f.label :image, class: "col-sm-2"%>
+        <div class="col-sm-10">
+            <%= f.file_field :image %>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :description, class: "col-sm-2" %>
+        <div class="col-sm-10">
+            <%= f.text_area :description, rows: 5, class: "form-control" %>
+        </div>
+    </div>
 
-<%= f.label :image %>
-<%= f.file_field :image %>
-<br>
-<%= f.label :description %>
-<%= f.text_area :description %>
-<hr>
-<%= f.submit %>
+    <hr>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <%= f.submit %>
+        </div>
+    </div>
 <% end %>
