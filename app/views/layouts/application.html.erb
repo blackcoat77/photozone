@@ -39,14 +39,14 @@
                           <%= link_to "New Post", new_post_path %>
                       </li>
                       <li>
-                          <%= link_to "Logout", destroy_user_session_path,  method: :delete, confirm: "Are you sure?" %>
+                          <% #link_to "Logout", destroy_user_session_path,  method: :delete, confirm: "Are you sure?" %>
                       </li>
                   <% else %>
                   <li>
-                        <%= link_to "Login", new_user_session_path %>
+                        <% # link_to "Login", new_user_session_path %>
                       </li>
                       <li>
-                        <%= link_to "Register", new_user_registration_path %>
+                        <% # link_to "Register", new_user_registration_path %>
                       </li>
                   <% end %>
 
@@ -58,10 +58,19 @@
                 </li>
                 <li>
                   <% if user_signed_in? %>
-                    <%= current_user.email %>
+                  Welcome back:  <%= current_user.name %>! 
                   <% end %>
                 </li>
             </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <% if current_user %>
+                      <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
+                      <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+                  <% else %>
+                      <li><%= link_to 'Login', new_user_session_path %></li>
+                      <li><%= link_to "Register", new_user_registration_path %></li>
+                  <% end %>
+                </ul>
         </div>
         <!-- /.navbar-collapse -->
     </div>
