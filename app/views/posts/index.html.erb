@@ -2,7 +2,8 @@
 <hr>
 
 <ul class="flex-container">
-<% @posts.each do |post| %>
+<% if @posts.present? %>
+ <% @posts.each do |post| %>
   <% if post.image.file? %>
    <li class="flex-item">
 
@@ -12,6 +13,7 @@
     <br>
    </li>
     <% end %>
+  <% end %>
 <% end %>
 </ul>
 

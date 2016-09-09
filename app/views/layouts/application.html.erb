@@ -24,7 +24,7 @@
                 <span class="icon-bar"></span>
             </button>
 
-      
+
             <%= link_to root_path do %>
             <%= image_tag "logo.png", class: "navbar-brand" %>
             <% end %>
@@ -55,6 +55,11 @@
                 </li>
                 <li>
                     <a href="#">Contact</a>
+                </li>
+                <li>
+                  <% if user_signed_in? %>
+                    <%= current_user.email %>
+                  <% end %>
                 </li>
             </ul>
         </div>
