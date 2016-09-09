@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
     # Strong parameters for devise go below
     before_action :configure_permitted_parameters, if: :devise_controller?
 
+    def after_sign_in_path_for(user)
+     dashboard_index_url
+    end
+
   protected
 
     def configure_permitted_parameters

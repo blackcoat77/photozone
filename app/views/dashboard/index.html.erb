@@ -1,0 +1,26 @@
+<h1>Dashboard</h1>
+
+<% if @user %>
+
+  <p>Welcome back:  <%= @user.name %>!</p> <br>
+  <p><%= link_to 'Add New Post', new_post_path %></p>
+  <p><%= link_to 'Edit Profile', edit_user_registration_path %></p>
+
+
+
+  <ul class="flex-container">
+    <% if @user.posts.present? %>
+     <% @user.posts.each do |post| %>
+      <% if post.image.file? %>
+            <li class="flex-item">
+                 <%= link_to image_tag(post.image.url(:medium)), post_path(post) %> <br>
+                 <%= truncate(post.description,  :length => 24, :omission => " ... ") %> <br>
+           </li>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ul>
+
+
+
+<% end %>
