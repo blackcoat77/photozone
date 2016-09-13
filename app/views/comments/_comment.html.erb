@@ -1,0 +1,14 @@
+  <p>
+    <b>Commenter:</b>
+    <%= comment.commenter %>
+  </p>
+
+  <p>
+    <b>Comment:</b>
+    <%= comment.body %>
+  </p>
+  <b><%= time_ago_in_words(comment.created_at) %> Ago </b>
+
+  <p><%= link_to 'Delete', [comment.post, comment], method: :delete, class: "button", data: { confirm: 'Are you sure' } %></p>
+
+  <hr>
