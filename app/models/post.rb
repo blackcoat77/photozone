@@ -1,9 +1,9 @@
 class Post < ApplicationRecord
 
   belongs_to :user
+  
   has_many :comments, dependent: :destroy
 
-  # Validation of post fields
   validates :description, presence: :true
   validates :image, presence: :true
 

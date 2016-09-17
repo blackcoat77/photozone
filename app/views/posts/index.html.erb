@@ -1,22 +1,10 @@
 <h1>Top posts</h1>
 <hr>
 
-<ul class="flex-container">
-<% if @posts.present? %>
- <% @posts.each do |post| %>
-  <% if post.image.file? %>
-   <li class="flex-item">
+ <div id="posts">
+   <ul class="flex-container">
+     <%= render @posts %>
+   </ul>
+</div>
 
-    <%= link_to image_tag(post.image.url(:medium)), post_path(post) %>
-    <br>
-    <%= truncate(post.description,  :length => 24, :omission => " ... ") %>
-    <br>
-   </li>
-    <% end %>
-  <% end %>
-<% end %>
-</ul>
-
-<!-- <ul class="flex-container">
-  <li class="flex-item">1</li>
-</ul> -->
+ <%= paginate @posts %>

@@ -1,32 +1,34 @@
 <h2>Show post:</h2>
 
-<%= image_tag(@post.image.url(:large)) %>
-<br>
-<%= @post.description %>
-
+<div class="show-flex">
+  <%= image_tag(@post.image.url(:large)) %>
+  <br>
+  <p class="description">
+      <%= @post.description %>
+  </p>
+</div>
 <hr>
 
 <h3>Comments</h3>
+<div id='com'>
 <!-- Render Partials _comment.html.erb -->
 <!-- This will now render the partial in app/views/comments/_comment.html.erb once for each comment that is in the @post.comments collection.
 As the render method iterates over the @post.comments collection, it assigns each comment to a local variable named the same as the partial,
 in this case comment which is then available in the partial for us to show. -->
 <%= render @post.comments %>
+</div>
 
+<!-- Show comment form and Render partials from comments folder -->
+<h4>Add a comment:</h4>
+<%= form_for([@post, @post.comments.build], validate: true, remote: true) do |f| %>
+   <%= render "comments/form", f: f %>
+<% end %>
 
-
-
-<!-- Render partials from comments folder -->
-
-  <%= render "comments/form" %>
-
-
-
-
+<!-- Check if user is signed in and if it's current user, the owner of the post -->
 <% if user_signed_in? && current_user.id == @post.user_id %>
-  <%= link_to 'Edit', edit_post_path(@post) %>
-| <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
-
+   <%= link_to 'Edit', edit_post_path(@post) %>
+   |
+   <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 
 <hr>

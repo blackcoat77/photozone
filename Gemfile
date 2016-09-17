@@ -36,6 +36,12 @@ gem 'compass-rails'
 gem 'populator'
 gem 'faker'
 
+
+gem 'kaminari'
+gem 'client_side_validations',
+     github: 'DavyJonesLocker/client_side_validations',
+     branch: 'rails5'
+
 # Rails admin gem https://github.com/sferik/rails_admin
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
@@ -52,6 +58,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'better_errors'
+  gem 'bullet'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

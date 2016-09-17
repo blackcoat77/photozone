@@ -1,1 +1,24 @@
+.col-lg-12 {
+  margin-bottom: 74px;
+}
 
+// views/posts/show.html.erb
+.show-flex  {
+  background-color: gold;
+  padding: 3px;
+  border: 2px solid #000;
+  margin: auto;
+  box-sizing: border-box;
+
+}
+
+p.description  {
+  -webkit-align-items: flex-start;
+   align-items: flex-start;
+
+}
+
+// Hide pagination on home page
+.next_page.disabled {
+display: none;
+}
