@@ -18,11 +18,35 @@ in this case comment which is then available in the partial for us to show. -->
 <%= render @post.comments %>
 </div>
 
-<!-- Show comment form and Render partials from comments folder -->
+<!-- Show comment form and Render partials from comments folder if user is logged in -->
 <h4>Add a comment:</h4>
-<%= form_for([@post, @post.comments.build], validate: true, remote: true) do |f| %>
-   <%= render "comments/form", f: f %>
-<% end %>
+
+
+
+<div class="row">
+<div class="col-sm-offset-3">
+            <div class="widget-area no-padding blank">
+            <div class="status-upload">
+              <!-- <form> -->
+              <%= form_for([@post, @post.comments.build], validate: true, remote: true) do |f| %>
+                  <% if user_signed_in? %>
+                      <%= render "comments/form", f: f %>
+                      <% else %>
+                       <%= link_to "Please Login to post comments", new_user_session_path %>
+                      <% end %>
+              <% end %>
+
+
+            </div><!-- Status Upload  -->
+          </div><!-- Widget Area -->
+        </div>
+</div>
+
+
+
+
+
+
 
 <!-- Check if user is signed in and if it's current user, the owner of the post -->
 <% if user_signed_in? && current_user.id == @post.user_id %>
@@ -32,4 +56,5 @@ in this case comment which is then available in the partial for us to show. -->
 <% end %>
 
 <hr>
+<br>
 <%= link_to '<< Back to Posts', posts_path %>

@@ -1,15 +1,35 @@
-<p>
-    <b>Commenter:</b>
-    <%= comment.commenter %>
-</p>
+<!-- Render comments and users and show them in show post page -->
 
-<p>
-    <b>Comment:</b>
-    <%= comment.body %>
-</p>
-<b><%= time_ago_in_words(comment.created_at) %>
-    Ago
-</b>
+
+<div class="row">
+    <div class="col-sm-1 thumb-comm-offset">
+        <div class="thumbnail">
+            <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+        </div>
+        <!-- /thumbnail -->
+    </div>
+    <!-- /col-sm-1 -->
+
+    <div class="col-sm-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <strong><%= comment.user.name %></strong>
+                <span class="text-muted">Commented
+                    <%= time_ago_in_words(comment.created_at) %>
+                    Ago</span>
+            </div>
+            <div class="panel-body">
+                <%= comment.body %>
+            </div>
+            <!-- /panel-body -->
+        </div>
+        <!-- /panel panel-default -->
+    </div>
+    <!-- /col-sm-5 -->
+
+</div>
+<!-- /row -->
+
 
 <% if user_signed_in? && current_user.id == @post.user_id %>
 <p><%= link_to 'Delete', [comment.post, comment], method: :delete, class: "button", data: { confirm: 'Are you sure' } %></p>
