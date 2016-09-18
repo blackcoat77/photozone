@@ -1,18 +1,26 @@
 .col-lg-12 {
-  margin-bottom: 74px;
+    margin-bottom: 74px;
 }
-
 // views/posts/show.html.erb
-.show-flex  {
-  background-color: gold;
-  padding: 3px;
-  border: 2px solid #000;
-  margin: auto;
-  box-sizing: border-box;
 
+.show-flex {
+    background-color: #f5f5f5;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    max-width: 600px;
+    text-align: center;
+    -webkit-flex-shrink: 0;
+    -webkit-box-align: stretch;
+    margin: 0 auto 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
 }
 
-p.description  {
-  -webkit-align-items: flex-start;
-   align-items: flex-start;
+p.description {
+    padding: 13px;
+    line-height: 18px;
+    margin-top: 15px;
 }
