@@ -35,7 +35,9 @@ gem 'devise'
 gem 'compass-rails'
 gem 'populator'
 gem 'faker'
-
+gem 'acts_as_votable'
+gem 'awesome_print', require:'ap'
+gem "font-awesome-rails"
 
 gem 'kaminari'
 gem 'client_side_validations',

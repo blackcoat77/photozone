@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :authenticate_user!, except:[:index, :show]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :upvote]
 
   def index
      @posts = Post.order(:created_at).page(params[:page]).per(9)
@@ -13,15 +14,15 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    # callback set_post method
   end
 
 
   def edit
-    @post = Post.find(params[:id])
+    # callback set_post method
   end
   def update
-    @post = Post.find(params[:id])
+
 
     if @post.update(post_params)
       flash[:success] = "Post has been successfully updated!"
@@ -49,13 +50,22 @@ class PostsController < ApplicationController
 
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
 
     redirect_to root_path
   end
 
+  def upvote
+    @post.upvote_by(current_user)
+    redirect_to :back
+  end
+
+
   private
+
+  def set_post
+   @post = Post.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:image, :description, :user_id)

@@ -18,10 +18,9 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "compass/css3";
+ @import "font-awesome";
 
- // body  {
- //   background-color: white;
- // }
+
  ///////////////////  Bootstrap overriding    //////////////////////////////////
 
  .navbar-inverse {
@@ -82,10 +81,6 @@
   -webkit-flex-wrap: wrap;
   -webkit-flex-direction: row; /* Safari */
   -webkit-flex-flow: row wrap;
-
-
-
-
 }
 
 ///////////////////  FLEX ITEM   ///////////////////////////////////////////////
@@ -99,7 +94,6 @@
     text-align: center;
     -webkit-flex-shrink: 0;
     -webkit-box-align: stretch;
-
 }
 
 
