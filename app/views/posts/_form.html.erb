@@ -11,6 +11,12 @@
         <%= f.hidden_field :user_id, :value => current_user.id %>
     </div>
 </div>
+<div class="form-group">
+    <%= f.label "Category Name", class: "col-sm-2"%>
+    <div class="col-sm-10">
+        <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => true %>
+    </div>
+</div>
 
 <hr>
 <div class="form-group">

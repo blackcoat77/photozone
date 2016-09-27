@@ -1,7 +1,7 @@
 <h1>Edit post</h1>
 
 
-<%= form_for @post, validate: true, html: { multipart: true, class: "form-horizontal" } do |f| %>
+<%= form_for @post, html: { multipart: true, class: "form-horizontal" } do |f| %>
   <%= render 'posts/form', f: f %>
 <% end %>
 
