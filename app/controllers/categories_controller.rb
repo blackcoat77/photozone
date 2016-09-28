@@ -3,28 +3,23 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!, except:[:index, :show]
   before_action :set_category
 
-  def index
-    @categories = Category.all
-  end
-
   def show
     # callback method set_category
+    # @cat = Category.find(params[:id])
+    @posts = @category.posts.page(params[:page]).per(9)
   end
 
-  def new
-    @category = Category.new
-  end
-  def create
-    @category = Category.new(category_params)
-
-    if @category.save
-      flash[:success] = "The category has been successfully created"
-      redirect_to post_path(@post)
-    else
-      flash[:error] = @category.errors.full_messages
-      redirect_to new_post_path
-    end
-  end
+  # def create
+  #   @category = Category.new(category_params)
+  #
+  #   if @category.save
+  #     flash[:success] = "The category has been successfully created"
+  #     redirect_to post_path(@post)
+  #   else
+  #     flash[:error] = @category.errors.full_messages
+  #     redirect_to new_post_path
+  #   end
+  # end
 
   def edit
     # callback method set_category
@@ -41,6 +36,7 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
+    # admin can destroy using rails_admin gem
     # @category.destroy
     # redirect_to root_path
   end
