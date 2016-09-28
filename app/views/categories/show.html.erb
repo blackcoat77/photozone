@@ -1,10 +1,8 @@
 <h1><%= @category.name %></h1>
 <hr>
-
  <div id="posts">
    <ul class="flex-container">
      <%= render @posts %>
    </ul>
 </div>
-
  <%= paginate @posts %>

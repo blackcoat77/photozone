@@ -5,21 +5,8 @@ class CategoriesController < ApplicationController
 
   def show
     # callback method set_category
-    # @cat = Category.find(params[:id])
     @posts = @category.posts.page(params[:page]).per(9)
   end
-
-  # def create
-  #   @category = Category.new(category_params)
-  #
-  #   if @category.save
-  #     flash[:success] = "The category has been successfully created"
-  #     redirect_to post_path(@post)
-  #   else
-  #     flash[:error] = @category.errors.full_messages
-  #     redirect_to new_post_path
-  #   end
-  # end
 
   def edit
     # callback method set_category
@@ -32,13 +19,10 @@ class CategoriesController < ApplicationController
       flash[:error] = @category.errors.full_messages
       redirect_to edit_post_path
     end
-
   end
 
   def destroy
     # admin can destroy using rails_admin gem
-    # @category.destroy
-    # redirect_to root_path
   end
 
   private

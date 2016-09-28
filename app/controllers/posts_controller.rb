@@ -17,13 +17,10 @@ class PostsController < ApplicationController
     # callback set_post method
   end
 
-
   def edit
     # callback set_post method
   end
   def update
-
-
     if @post.update(post_params)
       flash[:success] = "Post has been successfully updated!"
       redirect_to post_path(@post)
@@ -51,7 +48,6 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-
     redirect_to root_path
   end
 
