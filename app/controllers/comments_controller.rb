@@ -4,12 +4,13 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.create(comment_params)
+    @comment = @post.comments.new(comment_params)
     @comment.user = current_user
+    @comment.save!
 
     respond_to do |format|
     format.html { redirect_to post_path(@post) }
-    format.js
+    format.js # render comments/create.js.erb
     end
     # redirect_to post_path(@post)
   end
