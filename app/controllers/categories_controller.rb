@@ -6,6 +6,12 @@ class CategoriesController < ApplicationController
   def show
     # callback method set_category
     @posts = @category.posts.page(params[:page]).per(9)
+
+    respond_to do |format|
+     format.html # index.html.erb
+     format.json { render json: @posts }
+     format.js
+   end
   end
 
   def edit

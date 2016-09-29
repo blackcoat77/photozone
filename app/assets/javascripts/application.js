@@ -16,3 +16,8 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery.infinitescroll
+
+
+// Append posts ( flex-item to flex container on infinite scroll) throughout app. Use on categories, and posts index page
+// TODO Make infinitescroll for dashboard (user profile) once you figure out redirection on different roles
+$("#posts").append("<ul class='flex-container'><%= escape_javascript(render(@posts)) %></ul>");
