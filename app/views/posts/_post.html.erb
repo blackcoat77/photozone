@@ -1,3 +1,32 @@
 <li class="flex-item">
-  <%= link_to image_tag(post.image.url(:medium)), post_path(post)  %>
+
+  <div class="gallery-category">
+
+     <div class="simple-image">
+      <%= link_to image_tag(post.image.url(:medium)), post_path(post)  %>
+
+        <!-- <div class="title__rotation">
+           <h1 class="widget-title">Living room</h1>
+        </div> -->
+
+        <div class="content">
+           <!-- <p>View all images</p> -->
+        </div>
+
+
+        <div class="hover__active">
+           <p class="more">
+              <span class="glyphicon glyphicon-comment" aria-hidden="false"><%= post.comments.size %></span>
+              <!-- <a href="#">view gallery</a> -->
+           </p>
+           <p class="more">
+             <span class="fa fa-heart" aria-hidden="false"> <%= post.get_upvotes.size %> </span>
+           </p>
+        </div>
+
+
+     </div>
+
+  </div>
+
 </li>

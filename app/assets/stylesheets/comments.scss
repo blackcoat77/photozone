@@ -17,11 +17,7 @@ body .no-padding {
 
 .widget-area {
     background-color: #fff;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
-    border-radius: 4px;
+
     -webkit-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
     -moz-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
     -ms-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
@@ -36,10 +32,7 @@ body .no-padding {
 
 .status-upload {
     background-color: #f5f5f5;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
+
     border-radius: 4px;
     float: left;
     width: 100%;
@@ -50,11 +43,7 @@ body .no-padding {
 .status-upload form textarea {
     background: none repeat scroll 0 0 #fff;
     border: medium none;
-    -webkit-border-radius: 4px 4px 0 0;
-    -moz-border-radius: 4px 4px 0 0;
-    -ms-border-radius: 4px 4px 0 0;
-    -o-border-radius: 4px 4px 0 0;
-    border-radius: 4px 4px 0 0;
+
     height: 142px;
     letter-spacing: 0.3px;
     padding: 20px;
@@ -65,12 +54,7 @@ body .no-padding {
 }
 
 .status-upload form button {
-    border: medium none;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
-    border-radius: 4px;
+  
     color: #000;
     float: right;
     letter-spacing: 0.3px;
