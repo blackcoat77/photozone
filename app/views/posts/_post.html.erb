@@ -15,12 +15,16 @@
 
 
         <div class="hover__active">
-           <p class="more">
-              <span class="glyphicon glyphicon-comment" aria-hidden="false"><%= post.comments.size %></span>
+           <p>
+             <%= link_to post_path(post) do %>
+                <span class="glyphicon glyphicon-comment" aria-hidden="false"><b><%= post.comments.size %></b></span>
+              <% end %>
               <!-- <a href="#">view gallery</a> -->
            </p>
-           <p class="more">
-             <span class="fa fa-heart" aria-hidden="false"> <%= post.get_upvotes.size %> </span>
+           <p >
+             <%= link_to post_path(post) do %>
+                <span class="fa fa-heart" aria-hidden="false"><b> <%= post.get_upvotes.size %></b></span>
+              <% end %>
            </p>
         </div>
 
