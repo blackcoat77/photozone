@@ -6,11 +6,11 @@ class PostsController < ApplicationController
   def index
      @posts = Post.order(:created_at).page(params[:page]).per(9)
 
-      respond_to do |format|
-       format.html # index.html.erb
-       format.json { render json: @posts }
-       format.js
-     end
+    #   respond_to do |format|
+    #    format.html # index.html.erb
+    #    format.json { render json: @posts }
+    #    format.js
+    #  end
   end
 
   def show

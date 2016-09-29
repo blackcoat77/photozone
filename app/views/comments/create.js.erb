@@ -1,3 +1,2 @@
-// ajax comment section
-$('#com').html("<%=j render @post.comments %>");
-$('#comment_body').val("");
+$('#com').html("<%=j render @post.comments %>"); // ajax comment section
+$('#comment_body').val("");  // Prevents retaining text from already published comment. #comment_body is Rails internal code
