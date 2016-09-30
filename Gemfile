@@ -38,6 +38,7 @@ gem 'faker'
 gem 'acts_as_votable'
 gem 'awesome_print', require:'ap'
 gem "font-awesome-rails"
+gem 'magnific-popup-rails', '~> 1.1.0'
 
 gem 'kaminari'
 gem 'client_side_validations',

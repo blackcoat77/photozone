@@ -2,8 +2,42 @@
 
 
 <div class="show-flex">
-    <%= image_tag(@post.image.url(:large)) %>
-    <br>
+
+
+  <div class="gallery-category">
+
+     <div class="simple-image">
+
+        <%= link_to image_tag(@post.image.url(:large)), @post.image.url(:large), :class => "popup" %>
+
+
+
+        <!-- Check if user is signed in and if it's current user, the owner of the post, allow edit and delete his/her own post -->
+        <% if user_signed_in? && current_user.id == @post.user_id %>
+
+            <div class="hover__active hover__act">
+               <p>
+                 <%= link_to edit_post_path(@post) do %>
+                    <span><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+                  <% end %>
+               </p>
+
+               <p >
+                 <%= link_to post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }  do %>
+                    <span><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+                  <% end %>
+               </p>
+
+
+            </div><!-- End of hover__active2 div -->
+        <% end %>
+
+
+     </div><!-- End of div simple-image -->
+
+  </div><!-- End of gallery-category div -->
+
+
     <p class="description">
       <%= @post.description %>
     </p>
@@ -12,7 +46,14 @@
      <i class="fa fa-heart"></i>
      <%= @post.get_upvotes.size %>
     <% end %>
-</div>
+</div><!-- End of show-flex div -->
+
+
+
+
+
+
+
 <hr>
 
   <p>
@@ -51,12 +92,7 @@
 </section>
 
 
-<!-- Check if user is signed in and if it's current user, the owner of the post, allow edit and delete his/her own post -->
-<% if user_signed_in? && current_user.id == @post.user_id %>
-   <%= link_to 'Edit', edit_post_path(@post) %>
-   |
-   <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+
 
 <hr>
 <br>

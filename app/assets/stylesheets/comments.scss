@@ -32,11 +32,9 @@ body .no-padding {
 
 .status-upload {
     background-color: #f5f5f5;
-
-    border-radius: 4px;
     float: left;
     width: 100%;
-    border: 1px solid transparent;
+    border: 1px solid #F5F5F5;
 }
 
 
@@ -50,11 +48,11 @@ body .no-padding {
     width: 100%;
     resize: vertical;
     outline: none;
-    border: 1px solid #F2F2F2;
+    border: 1px solid #F5F5F5;
 }
 
 .status-upload form button {
-  
+
     color: #000;
     float: right;
     letter-spacing: 0.3px;

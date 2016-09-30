@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery.infinitescroll
+//= require magnific-popup
 
 
 // Append posts ( flex-item to flex container on infinite scroll) throughout app. Use on categories, and posts index page
