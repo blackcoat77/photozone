@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   def update
     if @post.update(post_params)
       flash[:success] = "Post has been successfully updated!"
-      redirect_to post_path(@post)
+      redirect_to post_path
     else
       flash[:error] = @post.errors.full_messages
       redirect_to edit_post_path

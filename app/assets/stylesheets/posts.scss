@@ -26,11 +26,6 @@ p.description {
 
 // #####################   Landing page on image hover show buttons for comments & likes ################################ //
 
-
-.category-home {
-    position: relative
-}
-
 .simple-image {
     position: relative;
     width: 100%;
@@ -59,7 +54,6 @@ p.description {
 
 }
 
-
 .hover__active span {
     background: #1B96FE;
     width: 48px;
@@ -74,6 +68,7 @@ p.description {
 
 }
 
+// add new class for show-flex card
 .simple-image .hover__act span {
   background: #1B96FE;
   width: 48px;
