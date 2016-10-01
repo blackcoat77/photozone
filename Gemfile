@@ -48,6 +48,8 @@ gem 'client_side_validations',
 # Rails admin gem https://github.com/sferik/rails_admin
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
+gem 'rails_admin_rollincode', '~> 1.0'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
