@@ -13,19 +13,21 @@ Rails.application.routes.draw do
 
     # Add nested route for comments
     resources :posts do
-        resources :comments
+      resources :comments
 
-        # acts as votable route
-        member do
-          put 'like', to: 'posts#upvote'
-        end
+      # acts as votable route
+      member do
+        put 'like', to: 'posts#upvote'
+      end
     end
 
     devise_for :users
-    
+
+    # Add route for static pages
     controller :pages do
       get :about
-      get :contact
     end
 
+    # Add route for contact page
+    resources :contacts, only: [:new, :create]
 end
