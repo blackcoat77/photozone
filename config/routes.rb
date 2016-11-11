@@ -22,5 +22,10 @@ Rails.application.routes.draw do
     end
 
     devise_for :users
+    
+    controller :pages do
+      get :about
+      get :contact
+    end
 
 end
