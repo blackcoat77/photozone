@@ -109,11 +109,18 @@ GEM
       railties (>= 4.1.0, < 5.1)
       responders
       warden (~> 1.2.3)
+    dropbox-sdk (1.6.5)
+      json
     erubis (2.7.0)
     execjs (2.7.0)
     faker (1.6.6)
       i18n (~> 0.5)
     ffi (1.9.14)
+<<<<<<< HEAD
+=======
+    figaro (1.1.1)
+      thor (~> 0.14)
+>>>>>>> to_heroku
     font-awesome-rails (4.7.0.0)
       railties (>= 3.2, < 5.1)
     globalid (0.3.7)
@@ -132,6 +139,7 @@ GEM
       railties (>= 3.2.16)
     js_regex (1.0.18)
       regexp_parser (= 0.3.6)
+    json (2.0.2)
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -147,7 +155,7 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    mimemagic (0.3.2)
+    mimemagic (0.3.0)
     mini_portile2 (2.1.0)
     minitest (5.9.1)
     multi_json (1.12.1)
@@ -157,12 +165,15 @@ GEM
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
-    paperclip (5.1.0)
-      activemodel (>= 4.2.0)
-      activesupport (>= 4.2.0)
+    paperclip (4.3.7)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
       cocaine (~> 0.5.5)
       mime-types
-      mimemagic (~> 0.3.0)
+      mimemagic (= 0.3.0)
+    paperclip-dropbox (1.3.2)
+      dropbox-sdk (~> 1.3)
+      paperclip (>= 3.1, < 5)
     pg (0.18.4)
     populator (1.0.0)
     puma (3.6.0)
@@ -273,6 +284,7 @@ DEPENDENCIES
   compass-rails
   devise
   faker
+  figaro
   font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
@@ -281,6 +293,7 @@ DEPENDENCIES
   magnific-popup-rails (~> 1.1.0)
   mysql2 (>= 0.3.18, < 0.5)
   paperclip
+  paperclip-dropbox (>= 1.1.7)
   pg (= 0.18.4)
   populator
   puma (~> 3.0)
