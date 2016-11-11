@@ -24,8 +24,9 @@ class Post < ApplicationRecord
 
                       :storage => :dropbox,
                       :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
+                      dropbox_visibility: 'public',
                       :styles => { large: "450x450#", medium: "300x300#", thumb: "100x100>" }
-                         
+
 
                       # url: '/assets/admin_user/:id/:style/:basename.:extension',
                       # path: ':rails_root/public/assets/admin_user/:id/:style/:basename.:extension'
