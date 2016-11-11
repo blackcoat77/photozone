@@ -1,18 +1,18 @@
 GIT
   remote: git://github.com/DavyJonesLocker/client_side_validations.git
-  revision: 01a0b88d058080d60d6245711bbd6ff964663efe
+  revision: 1715d0b71311eac3eb790061c10576211f1d8abc
   branch: rails5
   specs:
     client_side_validations (5.0.0)
       jquery-rails (~> 4.0, >= 4.0.1)
       js_regex (~> 1.0, >= 1.0.9)
-      rails (>= 5.0.0.rc2, < 5.1.0)
+      rails (>= 5.0.0, < 5.1.0)
 
 GIT
   remote: git://github.com/mshibuya/remotipart.git
-  revision: 7e244e78e148430b7720e6cf8f86263d6a1dfddf
+  revision: cd653ddc43bb09767b8f2802d6e27b3e00ef992f
   specs:
-    remotipart (1.3.0)
+    remotipart (1.3.1)
 
 GEM
   remote: https://rubygems.org/
@@ -55,8 +55,8 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     acts_as_votable (0.10.0)
-    arel (7.1.2)
-    autoprefixer-rails (6.4.1.1)
+    arel (7.1.4)
+    autoprefixer-rails (6.5.3)
       execjs
     awesome_print (1.7.0)
     bcrypt (3.1.11)
@@ -68,11 +68,11 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.2)
-    bullet (5.4.0)
+    bullet (5.4.2)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.10.0)
-    byebug (9.0.5)
-    chunky_png (1.3.7)
+    byebug (9.0.6)
+    chunky_png (1.3.8)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.8)
@@ -109,12 +109,14 @@ GEM
       railties (>= 4.1.0, < 5.1)
       responders
       warden (~> 1.2.3)
+    dropbox-sdk (1.6.5)
+      json
     erubis (2.7.0)
     execjs (2.7.0)
     faker (1.6.6)
       i18n (~> 0.5)
     ffi (1.9.14)
-    font-awesome-rails (4.6.3.1)
+    font-awesome-rails (4.7.0.0)
       railties (>= 3.2, < 5.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -132,6 +134,7 @@ GEM
       railties (>= 3.2.16)
     js_regex (1.0.18)
       regexp_parser (= 0.3.6)
+    json (2.0.2)
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -147,25 +150,26 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    mimemagic (0.3.2)
+    mimemagic (0.3.0)
     mini_portile2 (2.1.0)
-    minitest (5.9.0)
+    minitest (5.9.1)
     multi_json (1.12.1)
-    mysql2 (0.4.4)
+    mysql2 (0.4.5)
     nested_form (0.3.2)
     nio4r (1.2.1)
-    nokogiri (1.6.8)
+    nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
-      pkg-config (~> 1.1.7)
     orm_adapter (0.5.0)
-    paperclip (5.1.0)
-      activemodel (>= 4.2.0)
-      activesupport (>= 4.2.0)
+    paperclip (4.3.7)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
       cocaine (~> 0.5.5)
       mime-types
-      mimemagic (~> 0.3.0)
+      mimemagic (= 0.3.0)
+    paperclip-dropbox (1.3.2)
+      dropbox-sdk (~> 1.3)
+      paperclip (>= 3.1, < 5)
     pg (0.18.4)
-    pkg-config (1.1.7)
     populator (1.0.0)
     puma (3.6.0)
     rack (2.0.1)
@@ -191,7 +195,7 @@ GEM
       nokogiri (~> 1.6.0)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
-    rails_admin (1.0.0)
+    rails_admin (1.1.0)
       builder (~> 3.1)
       coffee-rails (~> 4.0)
       font-awesome-rails (>= 3.0, < 5)
@@ -213,7 +217,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (11.3.0)
-    rb-fsevent (0.9.7)
+    rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
     regexp_parser (0.3.6)
@@ -226,10 +230,11 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    spring (1.7.2)
-    spring-watcher-listen (2.0.0)
+    spring (2.0.0)
+      activesupport (>= 4.2)
+    spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
-      spring (~> 1.2)
+      spring (>= 1.2, < 3.0)
     sprockets (3.7.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -245,12 +250,12 @@ GEM
     turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (3.0.2)
+    uglifier (3.0.3)
       execjs (>= 0.3.0, < 3)
     uniform_notifier (1.10.0)
     warden (1.2.6)
       rack (>= 1.0)
-    web-console (3.3.1)
+    web-console (3.4.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
       debug_inspector
@@ -282,6 +287,7 @@ DEPENDENCIES
   magnific-popup-rails (~> 1.1.0)
   mysql2 (>= 0.3.18, < 0.5)
   paperclip
+  paperclip-dropbox (>= 1.1.7)
   pg (= 0.18.4)
   populator
   puma (~> 3.0)
@@ -298,4 +304,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.13.2
+   1.13.6
